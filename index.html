@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sevillana&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="sevillana-regular" href="#">K.mani</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- About -->
+        <section id="about" class="about">
+            <!-- Header and About Me Combined -->
+            <div class="about-content d-flex justify-content-between align-items-start mb-5">
+                <div class="text-left">
+                    <header class="hello">
+                        <h1 class="display-4 fw-bold">Hello,</h1>
+                        <h1 class="display-6 fw-bold">I'm Manikanta</h1>
+                    </header>
+        
+                    <!-- About Section -->
+                    <div class="about-info mt-4">
+                        <p class="wid">I have a strong foundation in full stack development, and a passion for solving complex problems through code.</p>
+                        <p>Let's connect to create something impactful together!</p>
+                        <div class="mt-4">
+                            <a href="C:\Users\manik\OneDrive\Desktop\po\assets\manikanta_resume .pdf" class="btn btn-primary me-2" download>Download CV</a>
+                            <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
+                        
+                            <!-- Social Media Icons -->
+                            <!-- <div class="social-icons mt-3">
+                                <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="social-icons">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/your-profile" target="_blank" class="social-icons github">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                             </div> -->
+                        </div>
+                    </div>
+                    
+                </div>
+        
+                <!-- Image on the Right Side -->
+                <img class="image1 rounded-circle" src="./assets/profile.png" alt="Manikanta">
+            </div>
+        </section>
+        
+        
+        <!-- Skills -->
+        <section id="skills" class="skills">
+            <h2 class="h3 mb-3">Skills:</h2>
+            <p class="skill_p">A skilled full-stack developer proficient in Java and Python for backend solutions, with expertise in HTML, CSS, and JavaScript for dynamic front-end experiences. Experienced with Django, Flask, Node.js, Express.js, React, and MongoDB for building interactive UIs and scalable data management.</p>
+            <div class="skills-container">
+                <div class="skills-section">
+                    <ul>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">C</span></li>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">C++</span></li>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">Java</span></li>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">Python</span></li>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">R</span></li>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">SQL</span></li>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">HTML</span></li>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">CSS</span></li>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">JavaScript</span></li>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">PHP</span></li>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">Node</span></li>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">Express</span></li>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">React</span></li>
+                        <li><span class="skill-icon">&#8226;</span><span class="skill-name">MongoDB</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- Projects -->
+        <section id="projects"  class="projects">
+            <h2 class="h3 mb-3">Projects</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="./assets/food_blog.png" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Food Blog</h5>
+                            <p class="card-text">Developed a responsive food recipe website with dynamic slideshow and categorized pages for various items.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2">Source</a>
+                            <a href="#" class="btn btn-primary btn-sm">Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="./assets/Java_Banking_System.png" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Java Banking System</h5>
+                            <p class="card-text">Developed a banking system in Java with features like customer creation, transaction tracking, and account management.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2">Source</a>
+                            <a href="#" class="btn btn-primary btn-sm">Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="./assets/Secure_Voting_System.png" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Secure Voting System</h5>
+                            <p class="card-text">Developed a Secure Voting System with real-time face recognition, administrative controls, and volunteer-led election management.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2">Source</a>
+                            <a href="#" class="btn btn-primary btn-sm">Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="./assets/Faculty_Management_System.png" class="card-img-top" alt="Project 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Faculty Management System</h5>
+                            <p class="card-text">Developed a Faculty Management System with dynamic data retrieval and visualization for faculty research impact.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2">Source</a>
+                            <a href="#" class="btn btn-primary btn-sm">Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="./assets/Todo_Management.png" class="card-img-top" alt="Project 5">
+                        <div class="card-body">
+                            <h5 class="card-title">Todo Management</h5>
+                            <p class="card-text">Developed a Django-based Todo Management app with user authentication, task management, and an intuitive interface.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="#" class="btn btn-outline-primary btn-sm me-2">Source</a>
+                            <a href="#" class="btn btn-primary btn-sm">Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact" class="contact">
+            <h2 class="h3 mb-3">Contact Me</h2>
+            <form>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="textarea sub">
+                    <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
