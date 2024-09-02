@@ -25,16 +25,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#about" onclick="toggleNavbar()">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
+                        <a class="nav-link" href="#skills" onclick="toggleNavbar()">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
+                        <a class="nav-link" href="#projects" onclick="toggleNavbar()">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#contact" onclick="toggleNavbar()">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -205,6 +205,10 @@
                     alert('Failed to send the message. Please try again.');
                 });
         });
+        function toggleNavbar() {
+            const navbarCollapse = document.getElementById('navbarNav');
+            navbarCollapse.classList.remove('show');
+        }
     </script>
 
 </body>
