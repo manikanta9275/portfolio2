@@ -202,16 +202,26 @@
         .form-control::placeholder {
             color: rgba(9, 10, 10, 0.7);
         }
-        @media (max-width: 358px) {
+        /* @media (max-width: 358px) {
             .image1{
-                margin-right: 500px; 
-                /* flex: 1; */
+                margin-top: -80px;
+                margin-right: -80px;
+                width: 100px;
+                height: 100px;
             }
-        }
+            .hello{
+                margin-top: -200px;
+            }
+        } */
         @media (max-width: 769px) {
             .image1{
-                margin-left: 250px; 
-                /* flex: 1; */
+                margin-right: -80px;
+                margin-top: -60px;
+            }
+            .hello{
+                color: black;
+                margin-top: -50px !important;
+                align-self: flex-start;
             }
         }
         @media (max-width: 993px) {
