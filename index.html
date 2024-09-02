@@ -11,12 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sevillana&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
-            <a class="sevillana-regular" href="#">K.mani</a>
+            <a class="sevillana-regular" href="#">K .mani</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -57,16 +58,6 @@
                         <div class="mt-4">
                             <a href="C:\Users\manik\OneDrive\Desktop\po\assets\manikanta_resume .pdf" class="btn btn-primary me-2" download>Download CV</a>
                             <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
-                        
-                            <!-- Social Media Icons -->
-                            <!-- <div class="social-icons mt-3">
-                                <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="social-icons">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="https://github.com/your-profile" target="_blank" class="social-icons github">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                             </div> -->
                         </div>
                     </div>
                     
@@ -76,7 +67,6 @@
                 <img class="image1 rounded-circle" src="./assets/profile.png" alt="Manikanta">
             </div>
         </section>
-        
         
         <!-- Skills -->
         <section id="skills" class="skills">
@@ -104,9 +94,8 @@
             </div>
         </section>
         
-        
         <!-- Projects -->
-        <section id="projects"  class="projects">
+        <section id="projects" class="projects">
             <h2 class="h3 mb-3">Projects</h2>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <div class="col">
@@ -117,7 +106,7 @@
                             <p class="card-text">Developed a responsive food recipe website with dynamic slideshow and categorized pages for various items.</p>
                         </div>
                         <div class="card-footer bg-transparent border-top-0">
-                            <a href="#" class="btn btn-outline-primary btn-sm me-2">Source</a>
+                            <a href="https://github.com/manikanta9275/html-project" class="btn btn-outline-primary btn-sm me-2">Source</a>
                             <a href="#" class="btn btn-primary btn-sm">Demo</a>
                         </div>
                     </div>
@@ -130,7 +119,7 @@
                             <p class="card-text">Developed a banking system in Java with features like customer creation, transaction tracking, and account management.</p>
                         </div>
                         <div class="card-footer bg-transparent border-top-0">
-                            <a href="#" class="btn btn-outline-primary btn-sm me-2">Source</a>
+                            <a href="https://github.com/manikanta9275/java-Banking-System" class="btn btn-outline-primary btn-sm me-2">Source</a>
                             <a href="#" class="btn btn-primary btn-sm">Demo</a>
                         </div>
                     </div>
@@ -143,33 +132,20 @@
                             <p class="card-text">Developed a Secure Voting System with real-time face recognition, administrative controls, and volunteer-led election management.</p>
                         </div>
                         <div class="card-footer bg-transparent border-top-0">
-                            <a href="#" class="btn btn-outline-primary btn-sm me-2">Source</a>
+                            <a href="https://github.com/manikanta9275/secure-face-voting" class="btn btn-outline-primary btn-sm me-2">Source</a>
                             <a href="#" class="btn btn-primary btn-sm">Demo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100 project-card">
-                        <img src="./assets/Faculty_Management_System.png" class="card-img-top" alt="Project 4">
+                        <img src="./assets/AI_Medical_Chatbot.png" class="card-img-top" alt="Project 4">
                         <div class="card-body">
-                            <h5 class="card-title">Faculty Management System</h5>
-                            <p class="card-text">Developed a Faculty Management System with dynamic data retrieval and visualization for faculty research impact.</p>
+                            <h5 class="card-title">AI Medical Chatbot</h5>
+                            <p class="card-text">Developed an AI-powered medical chatbot using Natural Language Processing (NLP) to provide health-related advice and consultation.</p>
                         </div>
                         <div class="card-footer bg-transparent border-top-0">
-                            <a href="#" class="btn btn-outline-primary btn-sm me-2">Source</a>
-                            <a href="#" class="btn btn-primary btn-sm">Demo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100 project-card">
-                        <img src="./assets/Todo_Management.png" class="card-img-top" alt="Project 5">
-                        <div class="card-body">
-                            <h5 class="card-title">Todo Management</h5>
-                            <p class="card-text">Developed a Django-based Todo Management app with user authentication, task management, and an intuitive interface.</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-top-0">
-                            <a href="#" class="btn btn-outline-primary btn-sm me-2">Source</a>
+                            <a href="https://github.com/manikanta9275/ai-medical-chatbot" class="btn btn-outline-primary btn-sm me-2">Source</a>
                             <a href="#" class="btn btn-primary btn-sm">Demo</a>
                         </div>
                     </div>
@@ -177,24 +153,46 @@
             </div>
         </section>
 
-        <!-- Contact Form -->
+        <!-- Contact -->
         <section id="contact" class="contact">
             <h2 class="h3 mb-3">Contact Me</h2>
-            <form>
+            <form id="contact-form">
                 <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Your Name" required>
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
                 </div>
                 <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Your Email" required>
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
                 </div>
-                <div class="textarea sub">
-                    <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                <div class="mb-3">
+                    <label for="contact" class="form-label">Phone Number:</label>
+                    <input type="tel" class="form-control" id="contact" name="contact" pattern="[0-9]{10}" required>
+                </div>                
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message:</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
         </section>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript files -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init('IYsohbHAmQVgu__7O'); // Replace 'YOUR_USER_ID' with your actual user ID
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('service_9hcay6d', 'template_bdtekug', this)
+                .then(function() {
+                    alert('Message sent successfully!');
+                }, function(error) {
+                    alert('Failed to send the message. Please try again.');
+                });
+        });
+    </script>
+
 </body>
 </html>
