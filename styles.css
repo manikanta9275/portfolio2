@@ -215,7 +215,7 @@
         } */
         @media (max-width: 769px) {
             .image1{
-                margin-right: -80px;
+                margin-right: auto;
                 margin-top: -60px;
             }
             .hello{
