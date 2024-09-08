@@ -101,12 +101,12 @@
         }
         .skills {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+            grid-template-columns: repeat(auto-fit, minmax(100px, 3fr));
             gap: 5px;
         }
         .skill-card {
-            color: white;
-            background-color: #5c9cbe;
+            /* color: white; */
+            background-color: #4ea7d653;
             padding: 10px;
             width: 100px;
             height: 50px;
