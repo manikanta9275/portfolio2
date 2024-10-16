@@ -21,15 +21,17 @@
         }
         
         .sevillana-regular {
-            font-family: "Sevillana", cursive;
-            font-weight: 400;
-            margin-left: 20px;
-            font-size: 30px;
-            color: #090909;
-            font-style: normal;
-            text-decoration: none;
-          }
-          
+            font-family: "Sevillana", cursive; /* Retain original font family */
+            font-weight: 700; /* Make the font bolder */
+            margin-left: 20px; /* Retain left margin */
+            font-size: 24px; /* Adjust font size */
+            color: #2c3e50; /* Change to a darker shade */
+            font-style: normal; /* Normal font style */
+            text-decoration: none; /* No underline */
+            padding: 10px 15px; /* Add padding for better clickability */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+        } 
         
         .nav-link {
             margin-right: 20px;
