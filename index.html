@@ -243,7 +243,6 @@
             document.getElementById('skills').style.display = 'block';
             emailjs.sendForm('service_9hcay6d', 'template_bdtekug', this)
                 .then(function() {
-                    alert('Email sent successfully!');
                     document.getElementById('contact').style.display = 'block';
                 }, function(error) {
                     alert('Failed to send email. Please try again.');
