@@ -242,8 +242,9 @@
                 .then(function() {
                     alert('Email sent successfully!');
                     // Hide overlay and show the rest of the content
-                    document.getElementById('emailOverlay').style.display = 'none';
+                    
                     document.getElementById('skills').style.display = 'block';
+                    document.getElementById('emailOverlay').style.display = 'none';
                     document.getElementById('projects').style.display = 'block';
                     document.getElementById('contact').style.display = 'block';
                 }, function(error) {
