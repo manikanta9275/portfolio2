@@ -206,11 +206,12 @@
         </section>
     </div>
 
-     <!-- Email Overlay -->
-     <div id="emailOverlay">
+   <!-- Email Overlay -->
+    <div id="emailOverlay">
         <form id="emailForm">
-            <h2>Enter Your Email</h2>
+            <h2>Please Enter Your Email</h2>
             <input type="email" id="userEmail" name="email" placeholder="Your email" required>
+            <p id="thankYouMessage" style="display:none; color: green; margin-top: 10px;  padding: 5px;">Thank you!</p>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
@@ -233,21 +234,32 @@
             navbarCollapse.classList.remove('show');
         }
 
-         // Email form submission
-         document.getElementById('emailForm').addEventListener('submit', function(event) {
+        // Email form submission
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            
-            // Send email to your inbox
-            document.getElementById('emailOverlay').style.display = 'none';
-            document.getElementById('projects').style.display = 'block';
-            document.getElementById('skills').style.display = 'block';
+
+            // Send email via EmailJS
             emailjs.sendForm('service_9hcay6d', 'template_bdtekug', this)
                 .then(function() {
-                    document.getElementById('contact').style.display = 'block';
+                    // Show 'Thank you' message below the submit button
+                    const thankYouMessage = document.getElementById('thankYouMessage');
+                    thankYouMessage.style.display = 'block';
+                    
+                    // Hide 'Thank you' message after 3 seconds
+                    setTimeout(function() {
+                        thankYouMessage.style.display = 'none';
+                        // Now hide the email form and show other sections
+                        document.getElementById('emailOverlay').style.display = 'none';
+                        document.getElementById('projects').style.display = 'block';
+                        document.getElementById('skills').style.display = 'block';
+                        document.getElementById('contact').style.display = 'block';
+                    }, 2000);
+
                 }, function(error) {
                     alert('Failed to send email. Please try again.');
                 });
         });
+      
     </script>
 
 </body>
