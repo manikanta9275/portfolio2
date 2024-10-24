@@ -51,9 +51,7 @@
         }
 
         /* Hide the other sections initially */
-         #contact {
-            display: none;
-        }
+        
         .sevillana-regular {
             font-family: "Sevillana", cursive; /* Retain original font family */
             font-weight: 700; /* Make the font bolder */
