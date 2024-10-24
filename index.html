@@ -19,28 +19,29 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
-            <a class="sevillana-regular" href="#">K .manikanta</a>
+            <a class="sevillana-regular" href="#">K. Manikanta</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about" onclick="toggleNavbar()">About</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills" onclick="toggleNavbar()">Skills</a>
+                        <a class="nav-link" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects" onclick="toggleNavbar()">Projects</a>
+                        <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact" onclick="toggleNavbar()">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
 
     <div class="container">
         <!-- About -->
@@ -205,6 +206,15 @@
         </section>
     </div>
 
+     <!-- Email Overlay -->
+     <div id="emailOverlay">
+        <form id="emailForm">
+            <h2>Enter Your Email</h2>
+            <input type="email" id="userEmail" name="email" placeholder="Your email" required>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    
     <!-- JavaScript files -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
@@ -222,6 +232,24 @@
             const navbarCollapse = document.getElementById('navbarNav');
             navbarCollapse.classList.remove('show');
         }
+
+         // Email form submission
+         document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Send email to your inbox
+            emailjs.sendForm('service_9hcay6d', 'template_bdtekug', this)
+                .then(function() {
+                    alert('Email sent successfully!');
+                    // Hide overlay and show the rest of the content
+                    document.getElementById('emailOverlay').style.display = 'none';
+                    document.getElementById('skills').style.display = 'block';
+                    document.getElementById('projects').style.display = 'block';
+                    document.getElementById('contact').style.display = 'block';
+                }, function(error) {
+                    alert('Failed to send email. Please try again.');
+                });
+        });
     </script>
 
 </body>
