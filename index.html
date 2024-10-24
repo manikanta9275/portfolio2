@@ -240,24 +240,39 @@
 
             // Send email via EmailJS
             emailjs.sendForm('service_9hcay6d', 'template_bdtekug', this)
-                .then(function() {
-                    // Show 'Thank you' message below the submit button
-                    const thankYouMessage = document.getElementById('thankYouMessage');
-                    thankYouMessage.style.display = 'block';
-                    
-                    // Hide 'Thank you' message after 3 seconds
-                    setTimeout(function() {
-                        thankYouMessage.style.display = 'none';
-                        // Now hide the email form and show other sections
-                        document.getElementById('emailOverlay').style.display = 'none';
-                        document.getElementById('projects').style.display = 'block';
-                        document.getElementById('skills').style.display = 'block';
-                        document.getElementById('contact').style.display = 'block';
-                    }, 2000);
+    .then(function() {
+        // Show 'Thank you' message and a countdown timer
+        const thankYouMessage = document.getElementById('thankYouMessage');
+        thankYouMessage.innerHTML = 'Thank you! (2)';
+        thankYouMessage.style.display = 'block';
 
-                }, function(error) {
-                    alert('Failed to send email. Please try again.');
-                });
+        // Initialize countdown timer (2 seconds)
+        let countdown = 2;
+        const timer = setInterval(function() {
+            countdown--;
+
+            // Update the message with the countdown
+            if (countdown >= 0) {
+                thankYouMessage.innerHTML = `Thank you! (${countdown})`;
+            }
+
+            // Hide 'Thank you' message and email form after the countdown reaches -1
+            if (countdown < 0) {
+                clearInterval(timer);
+                thankYouMessage.style.display = 'none';
+                
+                // Now hide the email form and show other sections
+                document.getElementById('emailOverlay').style.display = 'none';
+                document.getElementById('projects').style.display = 'block';
+                document.getElementById('skills').style.display = 'block';
+                document.getElementById('contact').style.display = 'block';
+            }
+        }, 1000);  // Countdown every second
+
+    }, function(error) {
+        alert('Failed to send email. Please try again.');
+    });
+
         });
       
     </script>
