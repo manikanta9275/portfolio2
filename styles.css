@@ -51,7 +51,7 @@
         }
 
         /* Hide the other sections initially */
-        #skills, #projects, #contact {
+         #contact {
             display: none;
         }
         .sevillana-regular {
