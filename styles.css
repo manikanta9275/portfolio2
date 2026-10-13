@@ -148,8 +148,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Glass Card Component */
 .glass-panel {
     background: var(--bg-card);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(0.1px);
+    -webkit-backdrop-filter: blur(0.1px);
     border: 1px solid var(--border-subtle);
     border-radius: 20px;
     padding: 3rem;
@@ -170,8 +170,8 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
     z-index: 1000;
     background: rgba(10, 15, 29, 0.82) !important;
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(0.1px);
+    -webkit-backdrop-filter: blur(0.1px);
     border-bottom: 1px solid var(--border-subtle);
     padding: 14px 0;
     transition: all 0.3s ease;
@@ -470,11 +470,24 @@ h1, h2, h3, h4, h5, h6 {
 
 .skill-card i {
     font-size: 2rem;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.3s ease;
 }
 
 .skill-card .devicon-express-original {
     color: #f8fafc;
+}
+
+/* High-contrast colors so Flask, Django, and Express do not blend into the dark background */
+.skill-card .devicon-flask-original {
+    color: #f8fafc !important; /* Crisp light slate/white instead of black */
+}
+
+.skill-card .devicon-django-plain {
+    color: #2ba977 !important; /* Bright official Django green instead of dark forest green */
 }
 
 .skill-card:hover i {
@@ -836,8 +849,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 100vw;
     height: 100vh;
     background: rgba(5, 9, 20, 0.88);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(0.1px);
+    -webkit-backdrop-filter: blur(0.1px);
     display: flex;
     justify-content: center;
     align-items: center;
