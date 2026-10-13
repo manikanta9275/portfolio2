@@ -148,8 +148,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Glass Card Component */
 .glass-panel {
     background: var(--bg-card);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     border: 1px solid var(--border-subtle);
     border-radius: 20px;
     padding: 3rem;
@@ -170,8 +170,8 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
     z-index: 1000;
     background: rgba(10, 15, 29, 0.82) !important;
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     border-bottom: 1px solid var(--border-subtle);
     padding: 14px 0;
     transition: all 0.3s ease;
@@ -824,4 +824,128 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column;
         text-align: center;
     }
+}
+
+/* ==========================================================================
+   Visitor Email Verification / Welcome Overlay
+   ========================================================================== */
+#emailOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(5, 9, 20, 0.88);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    padding: 1.5rem;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#emailOverlay.hide-overlay {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.visitor-modal {
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    background: rgba(17, 24, 39, 0.95);
+    border: 1px solid var(--border-light);
+    border-radius: 24px;
+    padding: 2.75rem 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(99, 102, 241, 0.25);
+    text-align: center;
+    animation: modal-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modal-pop {
+    0% { transform: scale(0.92); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.visitor-modal-glow {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 80px;
+    background: var(--gradient-brand);
+    filter: blur(40px);
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.visitor-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: var(--accent-cyan);
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.visitor-modal-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+    color: var(--text-primary);
+}
+
+.visitor-modal-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+}
+
+.visitor-input-wrapper {
+    position: relative;
+    margin-bottom: 1.25rem;
+}
+
+.visitor-input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.visitor-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 13px 16px 13px 46px;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.98rem;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.visitor-input:focus {
+    border-color: var(--accent-indigo);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+.visitor-status-msg {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
 }

@@ -497,6 +497,33 @@
         </div>
     </footer>
 
+    <!-- Visitor Email Verification Overlay -->
+    <div id="emailOverlay">
+        <div class="visitor-modal">
+            <div class="visitor-modal-glow"></div>
+            <div class="visitor-badge">
+                <i class="fas fa-door-open"></i> Welcome Visitor
+            </div>
+            <h2 class="visitor-modal-title">Welcome to My Portfolio</h2>
+            <p class="visitor-modal-desc">
+                Please enter your email to continue and explore my projects, technical skills, and experience.
+            </p>
+            
+            <form id="emailForm">
+                <div class="visitor-input-wrapper">
+                    <i class="fas fa-envelope visitor-input-icon"></i>
+                    <input type="email" id="userEmail" name="email" class="visitor-input" placeholder="Enter your email address" required autofocus>
+                </div>
+                
+                <div id="thankYouMessage" class="visitor-status-msg text-success" style="display: none;"></div>
+                
+                <button type="submit" id="visitor-submit-btn" class="btn-cta-primary w-100 justify-content-center py-3">
+                    <span>Enter Portfolio</span> <i class="fas fa-arrow-right ms-2"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- Bootstrap & EmailJS Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -506,6 +533,48 @@
         (function() {
             emailjs.init('IYsohbHAmQVgu__7O');
         })();
+
+        // Visitor Email Verification Form Submission
+        const emailForm = document.getElementById('emailForm');
+        const visitorSubmitBtn = document.getElementById('visitor-submit-btn');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+        const emailOverlay = document.getElementById('emailOverlay');
+
+        emailForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            visitorSubmitBtn.disabled = true;
+            visitorSubmitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+
+            // Send email to Manikanta via EmailJS
+            emailjs.sendForm('service_9hcay6d', 'template_48u5m1s', this)
+                .then(function() {
+                    let countdown = 2;
+                    thankYouMessage.className = 'visitor-status-msg text-success';
+                    thankYouMessage.innerHTML = `<i class="fas fa-check-circle me-1"></i> Thank you! Entering portfolio (${countdown}s)...`;
+                    thankYouMessage.style.display = 'block';
+
+                    const timer = setInterval(function() {
+                        countdown--;
+                        if (countdown >= 0) {
+                            thankYouMessage.innerHTML = `<i class="fas fa-check-circle me-1"></i> Thank you! Entering portfolio (${countdown}s)...`;
+                        }
+                        if (countdown < 0) {
+                            clearInterval(timer);
+                            emailOverlay.classList.add('hide-overlay');
+                            setTimeout(() => {
+                                emailOverlay.style.display = 'none';
+                            }, 400);
+                        }
+                    }, 1000);
+                }, function(error) {
+                    visitorSubmitBtn.disabled = false;
+                    visitorSubmitBtn.innerHTML = '<span>Enter Portfolio</span> <i class="fas fa-arrow-right ms-2"></i>';
+                    thankYouMessage.className = 'visitor-status-msg text-danger';
+                    thankYouMessage.innerHTML = '<i class="fas fa-triangle-exclamation me-1"></i> Failed to submit. Please try again.';
+                    thankYouMessage.style.display = 'block';
+                });
+        });
 
         // Contact Form Handling with Inline Alerts
         const contactForm = document.getElementById('contact-form');
